@@ -11,7 +11,7 @@ public class SleepUtils {
      */
     public static void sleep(int second){
         try {
-            Thread.sleep(100*second);
+            Thread.sleep(1000*second);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

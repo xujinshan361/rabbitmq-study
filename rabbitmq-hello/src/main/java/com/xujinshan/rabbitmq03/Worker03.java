@@ -28,6 +28,11 @@ public class Worker03 {
         };
         //采用手动应答
         boolean autoAck = false;
+        // 设置不公平分发，默认值为0：公平分发
+        int prefetchCount =1;
+
+
+        channel.basicQos(prefetchCount);
         channel.basicConsume(ACK_QUEUE_NAME, autoAck, deliverCallback, (consumerTag) -> {
             System.out.println(consumerTag + "消费者取消消费接口回调逻辑");
         });
