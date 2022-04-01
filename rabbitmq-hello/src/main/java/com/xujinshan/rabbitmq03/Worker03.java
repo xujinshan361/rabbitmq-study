@@ -29,8 +29,10 @@ public class Worker03 {
         //采用手动应答
         boolean autoAck = false;
         // 设置不公平分发，默认值为0：公平分发
-        int prefetchCount =1;
+//        int prefetchCount =1;
 
+        // 预取值
+        int prefetchCount =2;
 
         channel.basicQos(prefetchCount);
         channel.basicConsume(ACK_QUEUE_NAME, autoAck, deliverCallback, (consumerTag) -> {
