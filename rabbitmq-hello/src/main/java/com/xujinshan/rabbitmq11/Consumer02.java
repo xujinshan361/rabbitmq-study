@@ -1,4 +1,4 @@
-package com.xujinshan.rabbitmq09;
+package com.xujinshan.rabbitmq11;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.DeliverCallback;
@@ -7,7 +7,7 @@ import com.xujinshan.rabbitmqutils.RabbitMQUtils;
 
 /**
  * @Author: xujinshan361@163.com
- * 死信队列  -- 消息TTL过期
+ * 死信队列  -- 消息被拒
  * 消费者2
  */
 public class Consumer02 {

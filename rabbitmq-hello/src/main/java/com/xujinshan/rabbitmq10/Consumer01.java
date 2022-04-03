@@ -1,4 +1,4 @@
-package com.xujinshan.rabbitmq09;
+package com.xujinshan.rabbitmq10;
 
 import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.Channel;
@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  * @Author: xujinshan361@163.com
- * 死信队列 -- 消息TTL过期
+ * 死信队列 -- 队列达到最大长度
  * 消费者1
  */
 public class Consumer01 {
@@ -37,6 +37,8 @@ public class Consumer01 {
         arguments.put("x-dead-letter-exchange",DEAD_EXCHANGE);
         // 设置死信routingKey
         arguments.put("x-dead-letter-routing-key","lisi");
+        // 设置正常队列长度的限制
+        arguments.put("x-max-length",6);
         channel.queueDeclare(NORMAL_QUEUE,false,false,false,arguments);  // 普通队列
         channel.queueDeclare(DEAD_QUEUE,false,false,false,null);    // 死信队列
 
